@@ -1,0 +1,4 @@
+.myTableBody {
+    height: 25vh;
+    overflow-y: scroll;
+}
