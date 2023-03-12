@@ -8,7 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment: Production
+    environment: Staging
 
     steps:
     - name: Checkout code
@@ -30,6 +30,7 @@ jobs:
       uses: docker/login-action@v2
 
       env:
+        name: Staging
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
