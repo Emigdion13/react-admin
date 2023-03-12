@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
     - name: Checkout code
@@ -29,10 +30,9 @@ jobs:
       uses: docker/login-action@v2
 
       env:
-        name: Production
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo "$DOCKER_USERNAME"
+
       with:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
