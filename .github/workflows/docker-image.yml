@@ -5,7 +5,6 @@ on:
     branches: [main]
     
 jobs:
-  environment: Production
   build-and-deploy:
     runs-on: ubuntu-latest
 
@@ -27,7 +26,9 @@ jobs:
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
+
       env:
+        name: Production
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       with:
