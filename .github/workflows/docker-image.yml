@@ -43,7 +43,6 @@ jobs:
          emigdion/juantestingfrontend:latest
         
     - name: Inspect
-        run: |
-          docker image inspect emigdion/juantestingfrontend:latest
-
+      run: |
+        docker image inspect emigdion/juantestingfrontend:latest
 
